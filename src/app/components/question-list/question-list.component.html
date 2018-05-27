@@ -1,13 +1,6 @@
-<div class="question" *ngFor="let question of questions">
-  <br>
-  <div class="card">
-    <div class="card-header">
-      {{question.text}}
-      <a href="#" (click)="question.isHide = !question.isHide">显示</a>
-    </div>
-    <div class="card-body" [hidden]="question.isHide">
-      <p class="card-text">{{question.answer}}</p>
-    </div>
-  </div>
 
+<app-add-question (questionAdded)="addQuestion($event)"></app-add-question>
+<hr>
+<div class="question" *ngFor="let question of questions">
+    <app-question [question]="question"></app-question>
 </div>

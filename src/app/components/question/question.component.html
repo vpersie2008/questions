@@ -1,6 +1,14 @@
-<p>
-  question works!saas
-</p>
+<br>
+<div class="card">
+  <div class="card-header">
+    {{question.text}}
+    <a href="#" (click)="question.isHide = !question.isHide">显示</a>
+    <a href="#" (click)="removeQuestion(question)">删除</a>
+  </div>
+  <div class="card-body" [hidden]="question.isHide">
+    <p class="card-text">{{question.answer}}</p>
+  </div>
+</div>
 
 
 
